@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 // import React, { useState } from 'react';
 import Header from './../../components/Header';
+import api from './../../Api';
+
 import { 
   Grid, Button, TextField, makeStyles, Container
 } from '@material-ui/core';
@@ -13,7 +15,7 @@ import {
 
 const useStyles = makeStyles(() => ({
   containerMain: {
-    paddingTop: '25px',
+    marginTop: '25px',
   },
   
   buttonSubmit: {
@@ -27,28 +29,38 @@ const useStyles = makeStyles(() => ({
 export default function ProdAdd(){
   const classes = useStyles();
 
-  // const [nome, setNome] = useState('');
-  // const [email, setEmail] = useState('');
-  // const [senha, setSenha] = useState('');
+  const [nome, setNome] = useState('');
+  const [descricao, setDescricao] = useState('');
+  const [categoria, setCategoria] = useState('');
+  const [preco, setPreco] = useState('');
+  const [quantidade, setQuantidade] = useState('');
 
-  // function handleSubmit(){
-  //   const data = {
-  //     nome: nome,
-  //     email: email,
-  //     senha: senha,
-  //   }
-  //   console.log(data);
-  // }
+  async function handleSubmit(){
+    const data = {
+      nome: nome,
+      descricao: descricao,
+      categoria: categoria,
+      preco: preco,
+      quantidade: quantidade
+    }
+    const resposta = await api.post('/product/new_prod', data);
+    if(resposta.status === 200){
+      alert('Cadastrado com Sucesso.');
+      // window.location.href = "/";
+    }else{
+      if(resposta.status === 500){
+        alert('Não cadastrado');
+      }
+    }
+  }
 
   return(
     <div>
       <Header />
       <Container maxWidth="lg" className={classes.containerMain}>
         <Grid container spacing={2} justify="center" alignItems="center">
-          {/* <Box display="flex" justifyContent="center" m={1} p={1}>
-          </Box> */}
           <Grid item xs={12} style={{ textAlign: "center" }}>
-            <h1>Cadastro de Cliente</h1>
+            <h1>Cadastro de Produto</h1>
           </Grid>
     
           <form autoComplete="on">
@@ -59,8 +71,8 @@ export default function ProdAdd(){
                 type="text" 
                 variant="outlined" 
                 label="Nome" 
-                // value={nome} 
-                // onChange={e=>setNome(e.target.value)}
+                value={nome} 
+                onChange={e=>setNome(e.target.value)}
                 required 
               />
             </Grid>
@@ -68,11 +80,11 @@ export default function ProdAdd(){
               <TextField 
                 fullWidth 
                 id="outlined-basic" 
-                type="email" 
-                label="Email" 
+                type="text" 
+                label="Descrição" 
                 variant="outlined" 
-                // value={email} 
-                // onChange={e=>setEmail(e.target.value)}
+                value={descricao} 
+                onChange={e=>setDescricao(e.target.value)}
                 required 
               />
             </Grid>
@@ -80,11 +92,11 @@ export default function ProdAdd(){
               <TextField 
                 fullWidth 
                 id="outlined-basic" 
-                type="password" 
-                label="Senha" 
+                type="text" 
+                label="Categoria" 
                 variant="outlined" 
-                // value={senha} 
-                // onChange={e=>setSenha(e.target.value)}
+                value={categoria} 
+                onChange={e=>setCategoria(e.target.value)}
                 required 
               />
             </Grid>
@@ -92,11 +104,11 @@ export default function ProdAdd(){
               <TextField 
                 fullWidth 
                 id="outlined-basic" 
-                type="password" 
-                label="Senha" 
+                type="number" 
+                label="Preço" 
                 variant="outlined" 
-                // value={senha} 
-                // onChange={e=>setSenha(e.target.value)}
+                value={preco} 
+                onChange={e=>setPreco(e.target.value)}
                 required 
               />
             </Grid>
@@ -104,11 +116,11 @@ export default function ProdAdd(){
               <TextField 
                 fullWidth 
                 id="outlined-basic" 
-                type="password" 
-                label="Senha" 
+                type="number" 
+                label="Quantidade" 
                 variant="outlined" 
-                // value={senha} 
-                // onChange={e=>setSenha(e.target.value)}
+                value={quantidade} 
+                onChange={e=>setQuantidade(e.target.value)}
                 required 
               />
             </Grid>
@@ -118,7 +130,7 @@ export default function ProdAdd(){
                 variant="outlined" 
                 type="submit" 
                 className={classes.buttonSubmit}
-                // onClick={handleSubmit()}
+                onClick={handleSubmit}
               >
                 Confirmar
               </Button>

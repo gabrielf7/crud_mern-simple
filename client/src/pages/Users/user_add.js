@@ -14,7 +14,7 @@ import {
 
 const useStyles = makeStyles(() => ({
   containerMain: {
-    paddingTop: '25px',
+    marginTop: '25px',
   },
   
   buttonSubmit: {
@@ -55,8 +55,6 @@ export default function UserAdd(){
       <Header />
       <Container maxWidth="lg" className={classes.containerMain}>
         <Grid container spacing={2} justify="center" alignItems="center">
-          {/* <Box display="flex" justifyContent="center" m={1} p={1}>
-          </Box> */}
           <Grid item xs={12} style={{ textAlign: "center" }}>
             <h1>Cadastro de Cliente</h1>
           </Grid>
