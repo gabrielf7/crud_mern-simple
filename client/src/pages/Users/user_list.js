@@ -29,8 +29,8 @@ export default function UserList(){
       <Header />
       <ul>
         {Users.map(user => (
-          <li key={user.id}>
-            {/* {console.log(user.id)} */}
+          <li key={user._id}>
+            {/* {console.log(user._id)} */}
             <strong>Nome do Usuário</strong>
             <p>{user.nome}</p>
 
@@ -40,7 +40,7 @@ export default function UserList(){
             {/* <strong>Senha</strong>
             <p>{user.senha}</p> */}
 
-            <button onClick={() => handleDeleteUser(user.id)} type="button">
+            <button onClick={() => handleDeleteUser(user._id)} type="button">
               {/* <FiTrash2 size={20} color="#a8a8b3" /> */}
               Confirmar
             </button>
