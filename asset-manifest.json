@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/crud_mern-simple/static/css/main.720cda7d.chunk.css",
+    "main.js": "/crud_mern-simple/static/js/main.184f8486.chunk.js",
+    "main.js.map": "/crud_mern-simple/static/js/main.184f8486.chunk.js.map",
+    "runtime-main.js": "/crud_mern-simple/static/js/runtime-main.4c8063b1.js",
+    "runtime-main.js.map": "/crud_mern-simple/static/js/runtime-main.4c8063b1.js.map",
+    "static/js/2.c8179228.chunk.js": "/crud_mern-simple/static/js/2.c8179228.chunk.js",
+    "static/js/2.c8179228.chunk.js.map": "/crud_mern-simple/static/js/2.c8179228.chunk.js.map",
+    "index.html": "/crud_mern-simple/index.html",
+    "precache-manifest.6b0b8f7127f1ef996f09907a8a0f6a51.js": "/crud_mern-simple/precache-manifest.6b0b8f7127f1ef996f09907a8a0f6a51.js",
+    "service-worker.js": "/crud_mern-simple/service-worker.js",
+    "static/css/main.720cda7d.chunk.css.map": "/crud_mern-simple/static/css/main.720cda7d.chunk.css.map",
+    "static/js/2.c8179228.chunk.js.LICENSE.txt": "/crud_mern-simple/static/js/2.c8179228.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4c8063b1.js",
+    "static/js/2.c8179228.chunk.js",
+    "static/css/main.720cda7d.chunk.css",
+    "static/js/main.184f8486.chunk.js"
+  ]
+}
