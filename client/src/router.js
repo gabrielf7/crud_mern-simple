@@ -11,11 +11,11 @@ export default function Router(){
   return(
     <BrowserRouter>
       <Switch>
-        <Route path="/" exact component={Home} />
-        <Route path="/produto/adicionar" component={ProdAdd} />
-        <Route path="/produto/lista" component={ProdList} />
-        <Route path="/usuario/adicionar" component={UserAdd} />
-        <Route path="/usuario/lista" component={UserList} />
+        <Route path={process.env.PUBLIC_URL + '/'} exact component={Home} />
+        <Route path={process.env.PUBLIC_URL + '/produto/adicionar'} component={ProdAdd} />
+        <Route path={process.env.PUBLIC_URL + '/produto/lista'} component={ProdList} />
+        <Route path={process.env.PUBLIC_URL + '/usuario/adicionar'} component={UserAdd} />
+        <Route path={process.env.PUBLIC_URL + '/usuario/lista'} component={UserList} />
       </Switch>
     </BrowserRouter>
   );
