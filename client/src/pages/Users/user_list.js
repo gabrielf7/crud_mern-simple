@@ -25,7 +25,7 @@ export default function UserList(){
   }
 
   return(
-    <div>
+    <>
       <Header />
       <ul>
         {Users.map(user => (
@@ -47,6 +47,6 @@ export default function UserList(){
           </li>
         ))}
       </ul>
-    </div>
+    </>
   );
 }

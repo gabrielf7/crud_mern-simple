@@ -13,12 +13,23 @@ export default function ProdList() {
     })
   });
 
+  async function handleDeleteProduct(id) {
+    try{
+      await api.delete(
+        `/product/deletar_prod/${id}`
+      );
+      setProduct(product.filter(prod => prod.id !== id ));
+    } catch (err) {
+      alert('Erro ao deletar o usuário, tende novamente.');
+    }
+  }
+
   return (
-    <div>
+    <>
       <Header />
       <ul>
         {product.map(prod => (
-          <li key={prod.id}>
+          <li key={prod._id}>
             <strong>Nome do Produto</strong>
             <p>{prod.nome}</p>
 
@@ -34,12 +45,13 @@ export default function ProdList() {
             <strong>Quantidade</strong>
             <p>{prod.quantidade}</p>
 
-            {/* <button onClick={() => handleDeleteIncident(incident.id)} type="button">
-              <FiTrash2 size={20} color="#a8a8b3" />
-            </button> */}
+            <button onClick={() => handleDeleteProduct(prod._id)} type="button">
+              {/* <FiTrash2 size={20} color="#a8a8b3" /> */}
+              Confirmar
+            </button>
           </li>
         ))}
       </ul>
-    </div>
+    </>
   );
 }

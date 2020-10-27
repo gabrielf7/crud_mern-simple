@@ -56,7 +56,7 @@ export default function ProdAdd(){
   }
 
   return(
-    <div>
+    <>
       <Header />
       <Container maxWidth="lg" className={classes.containerMain} >
         <Grid container spacing={2} justify="center" alignItems="center">
@@ -143,6 +143,6 @@ export default function ProdAdd(){
           </Grid>
         </form>
       </Container>
-    </div>
+    </>
   );
 }

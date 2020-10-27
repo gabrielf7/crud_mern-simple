@@ -51,7 +51,7 @@ export default function UserAdd(){
   }
 
   return(
-    <div>
+    <>
       <Header />
       <Container maxWidth="lg" className={classes.containerMain}>
         <Grid container spacing={2} justify="center" alignItems="center">
@@ -110,6 +110,6 @@ export default function UserAdd(){
           </form>
         </Grid>
       </Container>
-    </div>
+    </>
   );
 }
