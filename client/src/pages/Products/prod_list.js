@@ -1,8 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import Header from './../../components/Header';
 import api from './../../Api';
+import { Link } from 'react-router-dom';
+
+import { makeStyles, Container, Grid, Button } from '@material-ui/core';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
+
+const useStyles = makeStyles({
+  containerMain: {
+    marginTop: '25px',
+  },
+  
+  table: {
+    minWidth: 650,
+  },
+});
 
 export default function ProdList() {
+  const classes = useStyles();
   const [product, setProduct] = useState([]);
 
   useEffect(() => {
@@ -14,44 +35,68 @@ export default function ProdList() {
   });
 
   async function handleDeleteProduct(id) {
-    try{
-      await api.delete(
-        `/product/deletar_prod/${id}`
-      );
-      setProduct(product.filter(prod => prod.id !== id ));
-    } catch (err) {
-      alert('Erro ao deletar o usuário, tende novamente.');
+    if(window.confirm('Deseja excluir esse produto?')){
+      try{
+        await api.delete(
+          `/product/deletar_prod/${id}`
+        );
+        setProduct(product.filter(prod => prod.id !== id ));
+      } catch (err) {
+        alert('Erro ao deletar o usuário, tende novamente.');
+      }
+
+    }else{
+      alert('Ação de excluir o produto foi cancelada.');
     }
   }
 
   return (
     <>
       <Header />
-      <ul>
-        {product.map(prod => (
-          <li key={prod._id}>
-            <strong>Nome do Produto</strong>
-            <p>{prod.nome}</p>
-
-            <strong>Descrição</strong>
-            <p>{prod.descricao}</p>
-
-            <strong>Categoria</strong>
-            <p>{prod.categoria}</p>
-
-            <strong>Valor:</strong>
-            <p>{Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(prod.preco)}</p>
-
-            <strong>Quantidade</strong>
-            <p>{prod.quantidade}</p>
-
-            <button onClick={() => handleDeleteProduct(prod._id)} type="button">
-              {/* <FiTrash2 size={20} color="#a8a8b3" /> */}
-              Confirmar
-            </button>
-          </li>
-        ))}
-      </ul>
+      <Container maxWidth="lg" className={classes.containerMain}>
+        <Grid container spacing={2} justify="center" alignItems="center">
+          <Grid item xs={12} style={{ textAlign: "center" }}>
+            <TableContainer component={Paper}>
+              <Table className={classes.table} aria-label="simple table">
+                <TableHead>
+                  <TableRow>
+                    <TableCell>Nome</TableCell>
+                    <TableCell align="right">Descrição</TableCell>
+                    <TableCell align="right">Categoria</TableCell>
+                    <TableCell align="right">Quantidade</TableCell>
+                    <TableCell align="right">Valor</TableCell>
+                    <TableCell align="right">Ação</TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                {product.map(prod => (
+                    <TableRow key={prod._id}>
+                      <TableCell component="th" scope="row">
+                        {prod.nome}
+                      </TableCell>
+                      <TableCell align="right">{prod.descricao}</TableCell>
+                      <TableCell align="right">{prod.categoria}</TableCell>
+                      <TableCell align="right">{prod.quantidade}</TableCell>
+                      <TableCell align="right">
+                        {Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(prod.preco)}
+                      </TableCell>
+                      <TableCell align="right">
+                        <Button onClick={() => handleDeleteProduct(prod._id)} type="button">
+                          {/* <FiTrash2 size={20} color="#a8a8b3" /> */}
+                          Deletar
+                        </Button>
+                        <Button component={Link} to={'/produto-atualizar/' + prod._id}>
+                          Atualizar
+                        </Button>
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </TableContainer>
+          </Grid>
+        </Grid>
+      </Container>
     </>
   );
 }
