@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Header from './../../components/Header';
 import api from './../../Api';
+import { penvp } from './../../router';
 import { Link } from 'react-router-dom';
 import { Button } from '@material-ui/core';
 
@@ -82,7 +83,7 @@ export default function UserList(){
                           {/* <FiTrash2 size={20} color="#a8a8b3" /> */}
                           Deletar
                         </Button>
-                        <Button component={Link} to={'/usuario-atualizar/' + user._id}>
+                        <Button component={Link} to={penvp + '/usuario-atualizar/' + user._id}>
                           Atualizar
                         </Button>
                       </TableCell>

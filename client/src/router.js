@@ -11,19 +11,21 @@ import UserAdd from './pages/Users/user_add';
 import UserList from './pages/Users/user_list';
 import UserUpdate from './pages/Users/user_update';
 
+export const penvp = process.env.PUBLIC_URL;
+
 export default function Router(){
   return(
     <BrowserRouter>
       <Switch>
-        <Route path="/" exact component={Home} />
+        <Route path={penvp + '/'} exact component={Home} />
 
-        <Route path="/produto/adicionar" component={ProdAdd} />
-        <Route path="/produto/lista" component={ProdList} />
-        <Route path="/produto-atualizar/:idProduct" component={ProdUpdate} />
+        <Route path={penvp + '/produto/adicionar'} component={ProdAdd} />
+        <Route path={penvp + '/produto/lista'} component={ProdList} />
+        <Route path={penvp + '/produto-atualizar/:idProduct'} component={ProdUpdate} />
 
-        <Route path="/usuario/adicionar" component={UserAdd} />
-        <Route path="/usuario/lista" component={UserList} />
-        <Route path="/usuario-atualizar/:idUser" component={UserUpdate} />
+        <Route path={penvp + '/usuario/adicionar'} component={UserAdd} />
+        <Route path={penvp + '/usuario/lista'} component={UserList} />
+        <Route path={penvp + '/usuario-atualizar/:idUser'} component={UserUpdate} />
       </Switch>
     </BrowserRouter>
   );

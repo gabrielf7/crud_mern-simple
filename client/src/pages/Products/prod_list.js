@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Header from './../../components/Header';
 import api from './../../Api';
+import { penvp } from './../../router';
 import { Link } from 'react-router-dom';
 
 import { makeStyles, Container, Grid, Button } from '@material-ui/core';
@@ -85,7 +86,7 @@ export default function ProdList() {
                           {/* <FiTrash2 size={20} color="#a8a8b3" /> */}
                           Deletar
                         </Button>
-                        <Button component={Link} to={'/produto-atualizar/' + prod._id}>
+                        <Button component={Link} to={penvp + '/produto-atualizar/' + prod._id}>
                           Atualizar
                         </Button>
                       </TableCell>

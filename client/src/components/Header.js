@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { penvp } from './../router';
 import { BsFillPersonPlusFill, BsBoxArrowInDownRight } from "react-icons/bs";
 
 import AppBar from '@material-ui/core/AppBar';
@@ -94,19 +95,19 @@ export default function Header(){
             onClose={handleClose1}
             className={classes.ButtonProdMain}
           >
-            <MenuItem variant="outlined" color="primary" component={Link} to="/produto/adicionar" 
+            <MenuItem variant="outlined" color="primary" component={Link} to={penvp + '/produto/adicionar'}
             className={classes.ButtonProd} onClick={handleClose1}
             >
               ADD Produto
             </MenuItem>
-            <MenuItem variant="outlined" color="primary" component={Link} to="/produto/lista" 
+            <MenuItem variant="outlined" color="primary" component={Link} to={penvp + '/produto/lista'}
             className={classes.ButtonProd} onClick={handleClose1}
             >
               LIST Produto
             </MenuItem>
           </Menu>
           <Typography className={classes.title} noWrap>
-            <Typography className={classes.h5} component={Link} to="/" variant="h5">
+            <Typography className={classes.h5} component={Link} to={penvp + '/'} variant="h5">
               Material-UI
             </Typography>
           </Typography>
@@ -129,8 +130,8 @@ export default function Header(){
             onClose={handleClose}
             className={classes.ButtonProdMain}
           >
-            <MenuItem component={Link} to="/usuario/adicionar" onClick={handleClose}>Adicionar</MenuItem>
-            <MenuItem component={Link} to="/usuario/lista" onClick={handleClose}>Listar</MenuItem>
+            <MenuItem component={Link} to={penvp + '/usuario/adicionar'} onClick={handleClose}>Adicionar</MenuItem>
+            <MenuItem component={Link} to={penvp + '/usuario/lista'} onClick={handleClose}>Listar</MenuItem>
           </Menu>
         </Toolbar>
       </AppBar>
