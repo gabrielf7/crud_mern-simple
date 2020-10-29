@@ -4,7 +4,9 @@ import api from './../../Api';
 import { penvp } from './../../router';
 import { Link } from 'react-router-dom';
 
-import { makeStyles, Container, Grid, Button } from '@material-ui/core';
+import { AiOutlineEdit, AiOutlineDelete } from 'react-icons/ai';
+
+import { makeStyles, Container, Grid, Button, ButtonGroup } from '@material-ui/core';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -82,13 +84,18 @@ export default function ProdList() {
                         {Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(prod.preco)}
                       </TableCell>
                       <TableCell align="right">
-                        <Button onClick={() => handleDeleteProduct(prod._id)} type="button">
-                          {/* <FiTrash2 size={20} color="#a8a8b3" /> */}
-                          Deletar
-                        </Button>
-                        <Button component={Link} to={penvp + '/produto-atualizar/' + prod._id}>
-                          Atualizar
-                        </Button>
+                        <ButtonGroup variant="text" color="primary" aria-label="text primary button group">
+                          <Button component={Link} to={penvp + '/produto-atualizar/' + prod._id} 
+                            style={{ color: "#2bcf39", fontSize: 30 }}
+                          >
+                            <AiOutlineEdit />
+                          </Button>
+                          <Button onClick={() => handleDeleteProduct(prod._id)} type="button" 
+                            style={{ color: "#710000", fontSize: 30 }}
+                          >
+                            <AiOutlineDelete />
+                          </Button>
+                        </ButtonGroup>
                       </TableCell>
                     </TableRow>
                   ))}

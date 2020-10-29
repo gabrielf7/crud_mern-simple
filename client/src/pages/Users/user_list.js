@@ -3,7 +3,9 @@ import Header from './../../components/Header';
 import api from './../../Api';
 import { penvp } from './../../router';
 import { Link } from 'react-router-dom';
-import { Button } from '@material-ui/core';
+import { Button, ButtonGroup } from '@material-ui/core';
+
+import { AiOutlineEdit, AiOutlineDelete } from 'react-icons/ai';
 
 import { makeStyles, Container, Grid } from '@material-ui/core';
 import Table from '@material-ui/core/Table';
@@ -79,13 +81,18 @@ export default function UserList(){
                       <TableCell align="right">{user.senha}</TableCell>
                       <TableCell align="right">data</TableCell>
                       <TableCell align="right">
-                        <Button onClick={() => handleDeleteUser(user._id)} type="button">
-                          {/* <FiTrash2 size={20} color="#a8a8b3" /> */}
-                          Deletar
-                        </Button>
-                        <Button component={Link} to={penvp + '/usuario-atualizar/' + user._id}>
-                          Atualizar
-                        </Button>
+                        <ButtonGroup variant="text" aria-label="text primary button group">
+                          <Button component={Link} to={penvp + '/usuario-atualizar/' + user._id} 
+                            style={{ color: "#2bcf39", fontSize: 30 }}
+                          >
+                            <AiOutlineEdit />
+                          </Button>
+                          <Button onClick={() => handleDeleteUser(user._id)} type="button" 
+                            style={{ color: "#710000", fontSize: 30 }}
+                          >
+                            <AiOutlineDelete />
+                          </Button>
+                        </ButtonGroup>
                       </TableCell>
                     </TableRow>
                   ))}
