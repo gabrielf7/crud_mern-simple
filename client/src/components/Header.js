@@ -76,7 +76,7 @@ export default function Header(){
     <div className="header">
       <AppBar position="static">
         <div>
-          <p style={{ fontSize: 10, textAlign: "center" }}>Ícones feitos por  &nbsp; 
+          <p style={{ fontSize: 10, textAlign: "center" }}>Favicon feito por  &nbsp; 
             <a href="https://icon54.com/" title="Pixel perfect" 
               style={{ marginTop: '-20px', color: '#2bcf39' }}
             >
