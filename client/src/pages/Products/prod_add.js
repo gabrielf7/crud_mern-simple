@@ -2,16 +2,17 @@ import React, { useState } from 'react';
 // import React, { useState } from 'react';
 import Header from './../../components/Header';
 import api from './../../Api';
+import { Link } from 'react-router-dom';
 
 import { 
   Grid, Button, TextField, makeStyles, Container, Paper
 } from '@material-ui/core';
 
 //colors
-import { 
-  blue 
+// import { 
+//   blue 
   
-} from '@material-ui/core/colors';
+// } from '@material-ui/core/colors';
 
 const useStyles = makeStyles(() => ({
   containerMain: {
@@ -21,9 +22,7 @@ const useStyles = makeStyles(() => ({
   buttonSubmit: {
     marginTop: 20,
     padding: '10px 100px 10px 100px',
-    backgroundColor: blue['900'],
-    color: 'white',
-    boxShadow: '0 0 1em gold',
+    boxShadow: '0 0 1em #2bcf39',
   },
 }));
 
@@ -47,7 +46,7 @@ export default function ProdAdd(){
     const resposta = await api.post('/product/new_prod', data);
     if(resposta.status === 200){
       alert('Cadastrado com Sucesso.');
-      // window.location.href = "/";
+      window.location.href = "/produto/lista";
     }else{
       if(resposta.status === 500){
         alert('Não cadastrado');
@@ -59,76 +58,84 @@ export default function ProdAdd(){
     <>
       <Header />
       <Container maxWidth="lg" className={classes.containerMain} >
-        <Grid container spacing={2} justify="center" alignItems="center">
-          <Paper elevation={3}>
-            <Grid item xs={12} style={{ paddingLeft: '100px', paddingRight: '100px',  textAlign: "center" }}>
-              <h1>Cadastro de Produto</h1>
-            </Grid>
-          </Paper>
+        <Grid item xs={12} style={{ textAlign: "center" }}>
+          <h1 style={{ color: '#6f42c1'}}>
+            Cadastro de Produto
+          </h1>
         </Grid>
         <form autoComplete="on">
           <Grid container spacing={2} justify="center" alignItems="center" style={{ marginTop: 20 }}>
             <Grid item xs={6} style={{ marginTop: 10 }}>
-              <TextField 
-                fullWidth 
-                id="outlined-basic" 
-                type="text" 
-                variant="outlined" 
-                label="Nome" 
-                value={nome} 
-                onChange={e=>setNome(e.target.value)}
-                required 
-              />
+              <Paper elevation={3}>
+                <TextField 
+                  fullWidth 
+                  id="outlined-basic" 
+                  type="text" 
+                  variant="outlined" 
+                  label="Nome" 
+                  value={nome} 
+                  onChange={e=>setNome(e.target.value)}
+                  required 
+                />
+              </Paper>
             </Grid>
             <Grid item xs={6} style={{ marginTop: 10 }}>
-              <TextField 
-                fullWidth 
-                id="outlined-basic" 
-                type="text" 
-                label="Categoria" 
-                variant="outlined" 
-                value={categoria} 
-                onChange={e=>setCategoria(e.target.value)}
-                required 
-              />
+              <Paper elevation={3}>
+                <TextField 
+                  fullWidth 
+                  id="outlined-basic" 
+                  type="text" 
+                  label="Categoria" 
+                  variant="outlined" 
+                  value={categoria} 
+                  onChange={e=>setCategoria(e.target.value)}
+                  required 
+                />
+              </Paper>
             </Grid>
           </Grid>
           <Grid item xs={12} style={{ marginTop: 10 }}>
-            <TextField 
-              fullWidth 
-              id="outlined-basic" 
-              type="text" 
-              label="Descrição" 
-              variant="outlined" 
-              value={descricao} 
-              onChange={e=>setDescricao(e.target.value)}
-              required 
-            />
+            <Paper elevation={3}>
+              <TextField 
+                fullWidth 
+                id="outlined-basic" 
+                type="text" 
+                label="Descrição" 
+                variant="outlined" 
+                value={descricao} 
+                onChange={e=>setDescricao(e.target.value)}
+                required 
+              />
+            </Paper>
           </Grid>
           <Grid container spacing={2} justify="center" alignItems="center">
             <Grid item xs={6} style={{ marginTop: 10 }}>
-              <TextField 
-                fullWidth 
-                id="outlined-basic" 
-                type="number" 
-                label="Preço" 
-                variant="outlined" 
-                value={preco} 
-                onChange={e=>setPreco(e.target.value)}
-                required 
-              />
+              <Paper elevation={3}>
+                <TextField 
+                  fullWidth 
+                  id="outlined-basic" 
+                  type="number" 
+                  label="Preço" 
+                  variant="outlined" 
+                  value={preco} 
+                  onChange={e=>setPreco(e.target.value)}
+                  required 
+                />
+              </Paper>
             </Grid>
             <Grid item xs={6} style={{ marginTop: 10 }}>
-              <TextField 
-                fullWidth 
-                id="outlined-basic" 
-                type="number" 
-                label="Quantidade" 
-                variant="outlined" 
-                value={quantidade} 
-                onChange={e=>setQuantidade(e.target.value)}
-                required 
-              />
+              <Paper elevation={3}>
+                <TextField 
+                  fullWidth 
+                  id="outlined-basic" 
+                  type="number" 
+                  label="Quantidade" 
+                  variant="outlined" 
+                  value={quantidade} 
+                  onChange={e=>setQuantidade(e.target.value)}
+                  required 
+                />
+              </Paper>
             </Grid>
           </Grid>
           <Grid container item xs={12} justify="center" alignItems="center">

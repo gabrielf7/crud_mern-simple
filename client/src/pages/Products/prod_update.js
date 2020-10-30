@@ -74,76 +74,84 @@ export default function ProdAdd(){
     <>
       <Header />
       <Container maxWidth="lg" className={classes.containerMain} >
-        <Grid container spacing={2} justify="center" alignItems="center">
-          <Paper elevation={3}>
-            <Grid item xs={12} style={{ paddingLeft: '100px', paddingRight: '100px',  textAlign: "center" }}>
-              <h1>Cadastro de Produto</h1>
-            </Grid>
-          </Paper>
+        <Grid item xs={12} style={{ textAlign: "center" }}>
+          <h1 style={{ color: '#6f42c1'}}>
+            Cadastro de Produto
+          </h1>
         </Grid>
         <form autoComplete="on">
           <Grid container spacing={2} justify="center" alignItems="center" style={{ marginTop: 20 }}>
             <Grid item xs={6} style={{ marginTop: 10 }}>
-              <TextField 
-                fullWidth 
-                id="outlined-basic" 
-                type="text" 
-                variant="outlined" 
-                label="Nome" 
-                value={nome} 
-                onChange={e=>setNome(e.target.value)}
-                required 
-              />
+              <Paper elevation={3}>
+                <TextField 
+                  fullWidth 
+                  id="outlined-basic" 
+                  type="text" 
+                  variant="outlined" 
+                  label="Nome" 
+                  value={nome} 
+                  onChange={e=>setNome(e.target.value)}
+                  required 
+                />
+              </Paper>
             </Grid>
             <Grid item xs={6} style={{ marginTop: 10 }}>
-              <TextField 
-                fullWidth 
-                id="outlined-basic" 
-                type="text" 
-                label="Categoria" 
-                variant="outlined" 
-                value={categoria} 
-                onChange={e=>setCategoria(e.target.value)}
-                required 
-              />
+              <Paper elevation={3}>
+                <TextField 
+                  fullWidth 
+                  id="outlined-basic" 
+                  type="text" 
+                  label="Categoria" 
+                  variant="outlined" 
+                  value={categoria} 
+                  onChange={e=>setCategoria(e.target.value)}
+                  required 
+                />
+              </Paper>
             </Grid>
           </Grid>
           <Grid item xs={12} style={{ marginTop: 10 }}>
-            <TextField 
-              fullWidth 
-              id="outlined-basic" 
-              type="text" 
-              label="Descrição" 
-              variant="outlined" 
-              value={descricao} 
-              onChange={e=>setDescricao(e.target.value)}
-              required 
-            />
+            <Paper elevation={3}>
+              <TextField 
+                fullWidth 
+                id="outlined-basic" 
+                type="text" 
+                label="Descrição" 
+                variant="outlined" 
+                value={descricao} 
+                onChange={e=>setDescricao(e.target.value)}
+                required 
+              />
+            </Paper>
           </Grid>
           <Grid container spacing={2} justify="center" alignItems="center">
             <Grid item xs={6} style={{ marginTop: 10 }}>
-              <TextField 
-                fullWidth 
-                id="outlined-basic" 
-                type="number" 
-                label="Preço" 
-                variant="outlined" 
-                value={preco} 
-                onChange={e=>setPreco(e.target.value)}
-                required 
-              />
+              <Paper elevation={3}>
+                <TextField 
+                  fullWidth 
+                  id="outlined-basic" 
+                  type="number" 
+                  label="Preço" 
+                  variant="outlined" 
+                  value={preco} 
+                  onChange={e=>setPreco(e.target.value)}
+                  required 
+                />
+              </Paper>
             </Grid>
             <Grid item xs={6} style={{ marginTop: 10 }}>
-              <TextField 
-                fullWidth 
-                id="outlined-basic" 
-                type="number" 
-                label="Quantidade" 
-                variant="outlined" 
-                value={quantidade} 
-                onChange={e=>setQuantidade(e.target.value)}
-                required 
-              />
+              <Paper elevation={3}>
+                <TextField 
+                  fullWidth 
+                  id="outlined-basic" 
+                  type="number" 
+                  label="Quantidade" 
+                  variant="outlined" 
+                  value={quantidade} 
+                  onChange={e=>setQuantidade(e.target.value)}
+                  required 
+                />
+              </Paper>
             </Grid>
           </Grid>
           <Grid container item xs={12} justify="center" alignItems="center">

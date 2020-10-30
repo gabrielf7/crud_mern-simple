@@ -75,6 +75,21 @@ export default function Header(){
   return(
     <div className="header">
       <AppBar position="static">
+        <div>
+          <p style={{ fontSize: 10, textAlign: "center" }}>Ícones feitos por  &nbsp; 
+            <a href="https://icon54.com/" title="Pixel perfect" 
+              style={{ marginTop: '-20px', color: '#2bcf39' }}
+            >
+              Pixel perfect
+            </a>
+            de &nbsp;
+            <a href="https://www.flaticon.com/br/" title="Flaticon"
+              style={{ marginTop: '-20px', color: '#2bcf39' }}
+            >
+              www.flaticon.com
+            </a>
+          </p>
+        </div>
         <Toolbar className={classes.toolbar}>
           <IconButton
             edge="start"
@@ -108,7 +123,7 @@ export default function Header(){
           </Menu>
           <Typography className={classes.title} noWrap>
             <Typography className={classes.h5} component={Link} to={penvp + '/'} variant="h5">
-              Material-UI
+              Flow CRUD
             </Typography>
           </Typography>
 

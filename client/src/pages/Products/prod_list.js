@@ -57,6 +57,11 @@ export default function ProdList() {
     <>
       <Header />
       <Container maxWidth="lg" className={classes.containerMain}>
+        <Grid item xs={12} style={{ textAlign: "center" }}>
+          <h1 style={{ color: '#6f42c1'}}>
+            Registro dos Produtos
+          </h1>
+        </Grid>
         <Grid container spacing={2} justify="center" alignItems="center">
           <Grid item xs={12} style={{ textAlign: "center" }}>
             <TableContainer component={Paper}>
@@ -68,6 +73,7 @@ export default function ProdList() {
                     <TableCell align="right">Categoria</TableCell>
                     <TableCell align="right">Quantidade</TableCell>
                     <TableCell align="right">Valor</TableCell>
+                    <TableCell align="right">Data</TableCell>
                     <TableCell align="right">Ação</TableCell>
                   </TableRow>
                 </TableHead>
@@ -83,6 +89,7 @@ export default function ProdList() {
                       <TableCell align="right">
                         {Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(prod.preco)}
                       </TableCell>
+                      <TableCell align="right">{prod.createdAt}</TableCell>
                       <TableCell align="right">
                         <ButtonGroup variant="text" color="primary" aria-label="text primary button group">
                           <Button component={Link} to={penvp + '/produto-atualizar/' + prod._id} 

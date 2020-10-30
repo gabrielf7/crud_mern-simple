@@ -58,6 +58,11 @@ export default function UserList(){
     <>
       <Header />
       <Container maxWidth="lg" className={classes.containerMain}>
+        <Grid item xs={12} style={{ textAlign: "center" }}>
+          <h1 style={{ color: '#6f42c1'}}>
+            Registro dos Usuários
+          </h1>
+        </Grid>
         <Grid container spacing={2} justify="center" alignItems="center">
           <Grid item xs={12} style={{ textAlign: "center" }}>
             <TableContainer component={Paper}>
@@ -67,7 +72,7 @@ export default function UserList(){
                     <TableCell>Nome</TableCell>
                     <TableCell align="right">Email</TableCell>
                     <TableCell align="right">Senha</TableCell>
-                    <TableCell align="right">data</TableCell>
+                    <TableCell align="right">Data</TableCell>
                     <TableCell align="right">Ação</TableCell>
                   </TableRow>
                 </TableHead>
@@ -79,7 +84,7 @@ export default function UserList(){
                       </TableCell>
                       <TableCell align="right">{user.email}</TableCell>
                       <TableCell align="right">{user.senha}</TableCell>
-                      <TableCell align="right">data</TableCell>
+                      <TableCell align="right">{user.createdAt}</TableCell>
                       <TableCell align="right">
                         <ButtonGroup variant="text" aria-label="text primary button group">
                           <Button component={Link} to={penvp + '/usuario-atualizar/' + user._id} 
