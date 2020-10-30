@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "8aa9fd64e34201ae1a51d889719c5676",
+    "revision": "b08283a76400045335798ee3cdeb5b68",
     "url": "/crud_mern-simple/index.html"
   },
   {
-    "revision": "5ea73d0e0d51e338161e",
+    "revision": "f7028ca6061eca2ca23a",
     "url": "/crud_mern-simple/static/css/main.720cda7d.chunk.css"
   },
   {
-    "revision": "2a0a057104c73788d565",
-    "url": "/crud_mern-simple/static/js/2.ca3afdda.chunk.js"
+    "revision": "ac5331f7c47095a6bad8",
+    "url": "/crud_mern-simple/static/js/2.daca0fda.chunk.js"
   },
   {
     "revision": "6397acf4c5cafcd591a770ce33fc3e2f",
-    "url": "/crud_mern-simple/static/js/2.ca3afdda.chunk.js.LICENSE.txt"
+    "url": "/crud_mern-simple/static/js/2.daca0fda.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "5ea73d0e0d51e338161e",
-    "url": "/crud_mern-simple/static/js/main.e542a716.chunk.js"
+    "revision": "f7028ca6061eca2ca23a",
+    "url": "/crud_mern-simple/static/js/main.8e84bb29.chunk.js"
   },
   {
     "revision": "9af8d59e0d629de3c5cc",
