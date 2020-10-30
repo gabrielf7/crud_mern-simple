@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/crud_mern-simple/static/css/main.720cda7d.chunk.css",
-    "main.js": "/crud_mern-simple/static/js/main.8e84bb29.chunk.js",
-    "main.js.map": "/crud_mern-simple/static/js/main.8e84bb29.chunk.js.map",
+    "main.js": "/crud_mern-simple/static/js/main.f1939f99.chunk.js",
+    "main.js.map": "/crud_mern-simple/static/js/main.f1939f99.chunk.js.map",
     "runtime-main.js": "/crud_mern-simple/static/js/runtime-main.4c8063b1.js",
     "runtime-main.js.map": "/crud_mern-simple/static/js/runtime-main.4c8063b1.js.map",
     "static/js/2.daca0fda.chunk.js": "/crud_mern-simple/static/js/2.daca0fda.chunk.js",
     "static/js/2.daca0fda.chunk.js.map": "/crud_mern-simple/static/js/2.daca0fda.chunk.js.map",
     "index.html": "/crud_mern-simple/index.html",
-    "precache-manifest.eb55900afff7ca06610dd6171bfe0671.js": "/crud_mern-simple/precache-manifest.eb55900afff7ca06610dd6171bfe0671.js",
+    "precache-manifest.099e170ea6b719c516b7db2be273d03b.js": "/crud_mern-simple/precache-manifest.099e170ea6b719c516b7db2be273d03b.js",
     "service-worker.js": "/crud_mern-simple/service-worker.js",
     "static/css/main.720cda7d.chunk.css.map": "/crud_mern-simple/static/css/main.720cda7d.chunk.css.map",
     "static/js/2.daca0fda.chunk.js.LICENSE.txt": "/crud_mern-simple/static/js/2.daca0fda.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.4c8063b1.js",
     "static/js/2.daca0fda.chunk.js",
     "static/css/main.720cda7d.chunk.css",
-    "static/js/main.8e84bb29.chunk.js"
+    "static/js/main.f1939f99.chunk.js"
   ]
 }
