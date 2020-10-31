@@ -1,9 +1,22 @@
 import React from 'react';
 import Header from './../../components/Header';
 
-import { Container, Grid, Paper } from '@material-ui/core';
+import { Container, Grid, Paper, makeStyles } from '@material-ui/core';
+
+const useStyles = makeStyles(() => ({
+  containerMain: {
+    marginTop: '25px',
+  },
+  
+  buttonSubmit: {
+    marginTop: 20,
+    padding: '10px 100px 10px 100px',
+    boxShadow: '0 0 1em #2bcf39',
+  },
+}));
 
 export default function Home() {
+  const classes = useStyles();
 
   return (
     <>
