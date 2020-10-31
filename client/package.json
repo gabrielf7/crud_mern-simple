@@ -2,6 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
+  "author": "João_Gabriel",
   "homepage": "https://gabrielf7.github.io/crud_mern-simple",
   "dependencies": {
     "@material-ui/core": "^4.11.0",
