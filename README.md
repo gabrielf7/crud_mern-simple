@@ -8,7 +8,7 @@ Projeto Experimental de CRUD, aprendendo a usar o [NodeJS](https://nodejs.org/) 
   
   <p>Assista o vídeo postado no Linkedin</p>
   
-  <a href="https://www.linkedin.com/feed/update/urn:li:activity:6704051636710457345/" target="_blank" alt="Link para o Linkedin sobre o projeto">Clique Aqui!</a>
+  <a href="https://www.linkedin.com/feed/update/urn:li:activity:6728380508536901632/" target="_blank" alt="Link para o Linkedin sobre o projeto">Clique Aqui!</a>
 
 </div>
 
