@@ -8,11 +8,6 @@ const useStyles = makeStyles(() => ({
     marginTop: '25px',
   },
   
-  buttonSubmit: {
-    marginTop: 20,
-    padding: '10px 100px 10px 100px',
-    boxShadow: '0 0 1em #2bcf39',
-  },
 }));
 
 export default function Home() {
